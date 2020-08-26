@@ -1,0 +1,12 @@
+<h1>Registro de usuario</h1>
+
+{% if error_message %}
+<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<form action="{% url 'baner:registro %}" method="POST">
+    {%csrf_token%}
+
+    
+    <input type="submit" value="registro">
+</form>
