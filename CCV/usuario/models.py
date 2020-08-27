@@ -22,6 +22,7 @@ class datosUsuario(models.Model):
     apellido = models.CharField(max_length=50)
     fechaNacimiento = models.DateField()
     idPais = models.ForeignKey(Pais,on_delete=models.CASCADE)
+    idEstado = models.ForeignKey(Estado,on_delete=models.CASCADE)
 
 class Experiencia(models.Model):
     id_usuario = models.ForeignKey(usuario,on_delete=models.CASCADE)
