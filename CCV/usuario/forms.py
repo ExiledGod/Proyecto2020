@@ -25,6 +25,7 @@ class nombreform(forms.ModelForm):
         }
 """
 class usuarioform(forms.ModelForm):
+    #password = forms.CharField(widget=forms.PasswordInput)
     class Meta:
         model = usuario
         fields = [
@@ -52,20 +53,20 @@ class datosUsuarioform(forms.ModelForm):
             'nombre', #campos del modelo
             'apellido',
             'fechaNacimiento',
-            'pais',
-            'estado',
+            'idPais',
+            'idEstado',
         ]
         labels={
             'nombre':'Nombre:', # 'nombre de att modelo':'nombre q vera el usuario',
             'apellido':'Apellido:',
             'fechaNacimiento':'Fecha Nacimiento:',
-            'pais':'Pais:',
-            'estado':'Estado:',
+            'idPais':'Pais:',
+            'idEstado':'Estado:',
         }
         widgets={
             'nombre':forms.TextInput(attrs={'class':'form-control'}) , #como lo representa y renderiza el html
             'apellido':forms.TextInput(attrs={'class':'form-control'}) ,
             'fechaNacimiento':forms.SelectDateWidget(years=BYears,empty_label=("Año", "Mes", "Dia")),
-            'pais':forms.Select(attrs={'class':'form-control'}),
-            'estado': forms.Select(attrs={'class':'form-control'}) ,
+            'idPais':forms.Select(attrs={'class':'form-control'}),
+            'idEstado': forms.Select(attrs={'class':'form-control'}) ,
         }
